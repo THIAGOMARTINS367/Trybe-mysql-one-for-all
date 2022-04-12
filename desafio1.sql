@@ -32,10 +32,10 @@ CREATE TABLE SpotifyClone.user (
   FOREIGN KEY (signature_id) REFERENCES SpotifyClone.signature (signature_id)
 );
 CREATE TABLE SpotifyClone.music_history (
-  history_id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   song_id INT UNSIGNED NOT NULL,
   user_id INT UNSIGNED NOT NULL,
   reproduction_date DATETIME NOT NULL,
+  CONSTRAINT PRIMARY KEY (song_id, user_id),
   FOREIGN KEY (song_id) REFERENCES SpotifyClone.songs (song_id),
   FOREIGN KEY (user_id) REFERENCES SpotifyClone.user (user_id)
 );
