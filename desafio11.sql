@@ -11,4 +11,4 @@ SELECT
 FROM
   SpotifyClone.songs
 ORDER BY
-  song_name
+  song_name;
