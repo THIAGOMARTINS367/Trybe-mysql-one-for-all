@@ -6,9 +6,16 @@ SELECT
     WHEN song_name LIKE '%Inner Fire' THEN REPLACE(song_name, 'Inner Fire', 'Project')
     WHEN song_name LIKE '%Silly' THEN REPLACE(song_name, 'Silly', 'Nice')
     WHEN song_name LIKE '%Circus' THEN REPLACE(song_name, 'Circus', 'Pull Request')
-    ELSE song_name
   END AS novo_nome
 FROM
   SpotifyClone.songs
+WHERE
+  song_name IN (
+    'Dance With Her Own',
+    "Let's Be Silly",
+    'Magic Circus',
+    'Troubles Of My Inner Fire',
+    'Without My Streets'
+  )
 ORDER BY
   song_name;
